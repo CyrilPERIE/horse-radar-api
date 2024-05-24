@@ -37,6 +37,8 @@ public class Ad {
     @JoinColumn(name = "horse_id", nullable = false)
     private Horse horse;
 	
+	public Ad() {}
+	
 	public Ad(Seller seller, Horse horse, Platform platform, String title, String body, List<String> pictures) {
 		this.seller = seller;
 		this.horse = horse;

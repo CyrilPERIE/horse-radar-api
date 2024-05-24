@@ -48,7 +48,6 @@ public class HorseController {
 	    	 horse.setDate(newHorse.getDate());
 	    	 horse.setRelevance(newHorse.getRelevance());
 	    	 horse.setPrice(newHorse.getPrice());
-	    	 horse.setAd(newHorse.getAd());
 	        return horseRepository.save(horse);
 	      })
 	      .orElseGet(() -> {

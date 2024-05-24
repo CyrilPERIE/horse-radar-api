@@ -45,7 +45,6 @@ public class SellerController {
 	      .map(seller -> {
 	    	seller.setUsername(newSeller.getUsername());
 	    	seller.setUrl(newSeller.getUrl());
-	    	seller.setAds(newSeller.getAds());
 	        return sellerRepository.save(seller);
 	      })
 	      .orElseGet(() -> {

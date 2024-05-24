@@ -2,12 +2,10 @@ package fr.horseradar.api.model;
 
 import java.util.Date;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Horse {
@@ -18,8 +16,6 @@ public class Horse {
 	private Date date;
 	private float relevance;
 	private Integer price;
-    @OneToOne(mappedBy = "horse", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Ad ad;
 	
 	public Horse() {}
 	
@@ -55,11 +51,4 @@ public class Horse {
 		this.price = price;
 	}
 	
-	public Ad getAd() {
-		return ad;
-	}
-	
-	public void setAd(Ad ad) {
-		this.ad = ad;
-	}
 }
