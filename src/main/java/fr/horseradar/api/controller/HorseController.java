@@ -29,7 +29,7 @@ public class HorseController {
 	  }
 	  
 	  @PostMapping("/horses")
-	  Horse newEmployee(@RequestBody Horse newHorse) {
+	  Horse newHorse(@RequestBody Horse newHorse) {
 	    return horseRepository.save(newHorse);
 	  }
 	  
@@ -41,12 +41,14 @@ public class HorseController {
 	  }
 	  
 	  @PutMapping("/horses/{id}")
-	  Horse replaceEmployee(@RequestBody Horse newHorse, @PathVariable Long id) {
+	  Horse replaceHorse(@RequestBody Horse newHorse, @PathVariable Long id) {
 	    
 	    return horseRepository.findById(id)
 	      .map(horse -> {
-	    	 horse.setUrl(newHorse.getUrl());
+	    	 horse.setDate(newHorse.getDate());
+	    	 horse.setRelevance(newHorse.getRelevance());
 	    	 horse.setPrice(newHorse.getPrice());
+	    	 horse.setAd(newHorse.getAd());
 	        return horseRepository.save(horse);
 	      })
 	      .orElseGet(() -> {

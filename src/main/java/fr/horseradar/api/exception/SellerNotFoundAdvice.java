@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class HorseNotFoundAdvice {
+public class SellerNotFoundAdvice {
 	
-	@ExceptionHandler(HorseNotFoundException.class)
+	@ExceptionHandler(SellerNotFoundException.class)
 	  @ResponseStatus(HttpStatus.NOT_FOUND)
-	  String adNotFoundHandler(HorseNotFoundException ex) {
+	  String sellerNotFoundHandler(SellerNotFoundException ex) {
 	    return ex.getMessage();
 	  }
 
