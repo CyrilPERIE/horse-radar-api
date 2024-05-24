@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import fr.horseradar.api.exception.SellerNotFoundException;
 import fr.horseradar.api.model.Seller;
 import fr.horseradar.api.repository.SellerRepository;
 
+@RestController
 public class SellerController {
 
 	private final SellerRepository sellerRepository;
